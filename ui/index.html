@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>VaxTrackON</title>
+</head>
+<body>
+  <div id="app">
+    <div v-if="error" class="container">
+      <div class="row title-section">
+        <h1 class="error-text"> Something went wrong.</h1>
+        <p>{{message.length ? message : "We're not sure what happened, reload the page to and try again."}}<p>
+      </div>
+    </div>
+    <div v-else class="container">
+      <div class="row title-section">
+        <h1>VaxTrackON</h1>
+        <strong>VERSION {{ version }}</strong>
+      </div>
+      <hr>
+      <div class="row tracked-section">
+        <div v-if="trackedSites.length" class="row sites-watched">
+            <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>watched sites</th>
+              </tr>
+            </thead>
+            <tbody>
+               <tr v-for="site in trackedSites" :key="site">
+                <td>{{ site }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p v-else class="warning-text">No sites in watch list – add one below.</p>
+        <div class="row add-site-from">
+            <div class="12 columns">
+              <label for="siteEntry">add a site</label>
+              <input class="u-full-width" type="url" placeholder="http://ontario.ca" id="siteEntry" v-on:change="onSiteChange">
+            </div>
+            <!-- <div class="six columns">
+              <label for="elIDEntry">Element ID</label>
+              <input class="u-full-width" type="text" placeholder="#18" id="elIDEntry">
+            </div> -->
+          <button class="button-primary" v-on:click="submitSite">add site</button>
+        </div>
+      </div>
+      <footer class="u-full-width">
+        <p>&copy; suraj goraya 2021</p>
+        <p>/</p>
+        <p><a href="https://github.com/surajgoraya/VaxTrackON">GitHub</a></p>
+      </footer>
+    </div>
+  </div>
+</body>
+
+<script src="./js/app.js"></script>
+</html>
