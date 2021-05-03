@@ -1,5 +1,5 @@
-![A screenshot of a notification indicating the webpage has changed](/docs/notification_screenshot.png?raw=true)
 # PageTrack
+![A screenshot of a notification indicating the webpage has changed](/docs/notification_screenshot.png?raw=true)
 ## What & why?
 This utility allows for people to watch webpages, and specific elements, nodes/divs for changes & notifies them if there is a change. This was initially built fo monitoring Ontario's (currently) rapidly changing vaccination eligibility pages, however, can be expanded to any webpage really. Upon a webpage change, a notification is displayed (along with some output to the console) which the user can click on to navigate to the changed webpage.
 ![A screenshot of a of the terminal indicating the webpage has changed](/docs/terminal_screenshot.png?raw=true)
