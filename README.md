@@ -1,5 +1,5 @@
 ![A screenshot of a notification indicating the webpage has changed](/docs/notification_screenshot.png?raw=true)
-# VaxTrackON
+# PageTrack
 A small node based utility which tracks changes to the Ontario booking portals and lets the user know that the webpage has changed. 
 Usually this means a new age group or postal code has been added.
 
@@ -10,7 +10,7 @@ This utility allows for people to watch webpages, and specific elements, nodes/d
 Webpages can be added to the watch list by navigating to http://localhost:9000, this will bring up a small web-based UI which allows you to specify a URL as well as a node to watch specifically. :anger: **This is currently required!** :anger: 
 
 You can specify which element you want watched by either providing a `.class-name` for watching a particular element with that class (where `class-name` is the name of the class), or you can provide a `#id-name`, (where `id-name` is the ID on the element). If you want to watch the WHOLE page, you can specify `html` in that field.
-![A screenshot of the VaxTrackON portal, showing a table with a watched site](/docs/portal_screenshot.png?raw=true)
+![A screenshot of the PageTrack portal, showing a table with a watched site](/docs/portal_screenshot.png?raw=true)
 ## Built on/with
 * NodeJS
 * VueJS
