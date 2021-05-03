@@ -30,26 +30,28 @@
             <table class="u-full-width">
             <thead>
               <tr>
-                <th>watched sites</th>
+                <th>watched site</th>
+                <th>tag</th>
               </tr>
             </thead>
             <tbody>
                <tr v-for="site in trackedSites" :key="site">
-                <td>{{ site }}</td>
+                <td>{{ site.url }}</td>
+                <td>{{ site.tag }}</td>
               </tr>
             </tbody>
           </table>
         </div>
         <p v-else class="warning-text">No sites in watch list – add one below.</p>
         <div class="row add-site-from">
-            <div class="12 columns">
+            <div class="six columns">
               <label for="siteEntry">add a site</label>
               <input class="u-full-width" type="url" placeholder="http://ontario.ca" id="siteEntry" v-on:change="onSiteChange">
             </div>
-            <!-- <div class="six columns">
+            <div class="six columns">
               <label for="elIDEntry">Element ID</label>
-              <input class="u-full-width" type="text" placeholder="#18" id="elIDEntry">
-            </div> -->
+              <input class="u-full-width" type="text" placeholder="#18" id="elIDEntry" v-on:change="onTagChange">
+            </div>
           <button class="button-primary" v-on:click="submitSite">add site</button>
         </div>
       </div>

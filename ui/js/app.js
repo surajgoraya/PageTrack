@@ -8,6 +8,7 @@ const app = new Vue({
         trackedSites: [],
         message: '',
         newSite: '',
+        newTag: ''
     },
     mounted: function(){
         fetch(`${baseURL}/version`)
@@ -39,8 +40,12 @@ const app = new Vue({
             const site = e.target.value;
             this.newSite = site;
         },
+        onTagChange: function(e){
+            const tag = e.target.value;
+            this.newTag = tag;
+        },
         submitSite: function(){
-            fetch(`${baseURL}/add`, { method: 'POST', headers: { 'Content-Type': 'application/json'}, body: JSON.stringify({site: this.newSite})})
+            fetch(`${baseURL}/add`, { method: 'POST', headers: { 'Content-Type': 'application/json'}, body: JSON.stringify({site: this.newSite, tag: this.newTag})})
             .then(e=>{
                 if(e.status=== 200){
                     location.reload();
